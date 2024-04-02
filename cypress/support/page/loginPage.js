@@ -5,6 +5,7 @@ let campoEmail = '[data-qa="login-email"]'
 let campoSenha = '[data-qa="login-password"]'
 let btnLogin = '[data-qa="login-button"]'
 let btnLogout = '.shop-menu > .nav > :nth-child(4) > a'
+let textLoginInvalido = '.login-form > form > p'
 
 
 Cypress.Commands.add('gerarDadosLogin', () => {
@@ -16,14 +17,6 @@ Cypress.Commands.add('gerarDadosLogin', () => {
         usuarioInvalido: {
             email: faker.internet.email(),
             senha: faker.internet.password(),
-        },
-        usuarioSenhaInvalida:{
-            email: 'vs@gmail.com',
-            senha: faker.internet.password()
-        },
-        usuarioEmailInvalido:{
-            email: faker.internet.email(),
-            senha: '123456'
         }
     })
 })
@@ -46,6 +39,10 @@ Cypress.Commands.add('clicarBtnLogin', () => {
 
 Cypress.Commands.add('clicarBtnLogout', () => {
     cy.get(btnLogout).click()
+})
+
+Cypress.Commands.add('validarTextLoginInvalido', () => {
+    cy.get(textLoginInvalido).contains('Your email or password is incorrect!')
 })
 
 

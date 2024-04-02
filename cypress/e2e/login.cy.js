@@ -10,7 +10,7 @@ describe('Login', () => {
         cy.gerarDadosLogin()
         cy.readFile("cypress/fixtures/loginData.json").then((data) => {
             const usuarioValido = data.usuarioValido
-            
+
             cy.clicarBtnLogar()
             cy.preencherCampoEmail(usuarioValido.email)
             cy.preencherCampoSenha(usuarioValido.senha)
@@ -28,8 +28,7 @@ describe('Login', () => {
             cy.preencherCampoEmail(usuarioInvalido.email)
             cy.preencherCampoSenha(usuarioInvalido.senha)
             cy.clicarBtnLogin()
-            cy.clicarBtnLogout()
+            cy.validarTextLoginInvalido()
         })
-    });
-    
+    });    
 });
