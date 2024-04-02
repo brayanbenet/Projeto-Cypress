@@ -21,6 +21,13 @@ Cypress.Commands.add('gerarDadosLogin', () => {
     })
 })
 
+Cypress.Commands.add('fazerLogin', (email, senha) => {
+    cy.get(btnLogar).click()
+    cy.get(campoEmail).type(email)
+    cy.get(campoSenha).type(senha)
+    cy.get(btnLogin).click()
+})
+
 Cypress.Commands.add('clicarBtnLogar', () => {
     cy.get(btnLogar).click()
 })

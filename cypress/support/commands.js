@@ -25,3 +25,4 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import '../support/page/loginPage'
+import '../support/page/cadastroPage'
