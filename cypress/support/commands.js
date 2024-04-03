@@ -26,3 +26,4 @@
 
 import '../support/page/loginPage'
 import '../support/page/cadastroPage'
+import '../support//page/logoutPage'

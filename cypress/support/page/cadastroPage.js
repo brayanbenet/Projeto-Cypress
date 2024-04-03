@@ -134,5 +134,9 @@ Cypress.Commands.add('clicarBtnDeletarConta', () => {
     cy.get(btnDeletarConta).click()
 })
 
+Cypress.Commands.add('validarContaDeletada', () => {
+    cy.get(btnLogar).should('be.visible')
+})
+
 
 

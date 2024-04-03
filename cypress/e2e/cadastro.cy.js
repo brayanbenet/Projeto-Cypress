@@ -34,6 +34,7 @@ describe('Cadastro', () => {
             cy.clicarBtnContinuar()
             cy.clicarBtnDeletarConta()
             cy.clicarBtnContinuar()
+            cy.validarContaDeletada()
         })
     });
 });
